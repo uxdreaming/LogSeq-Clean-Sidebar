@@ -1,0 +1,39 @@
+{
+  "name": "logseq-clean-sidebar",
+  "version": "0.1.0",
+  "description": "Clean up Logseq sidebar by hiding unused elements, sorting favorites, and filtering recents",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "npx vite build --watch",
+    "build": "npx vite build"
+  },
+  "keywords": [
+    "logseq",
+    "plugin",
+    "sidebar",
+    "ribbon",
+    "clean",
+    "ui"
+  ],
+  "author": "Aru",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uxdreaming/logseq-clean-sidebar"
+  },
+  "bugs": {
+    "url": "https://github.com/uxdreaming/logseq-clean-sidebar/issues"
+  },
+  "homepage": "https://github.com/uxdreaming/logseq-clean-sidebar#readme",
+  "devDependencies": {
+    "@logseq/libs": "^0.0.15",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0",
+    "vite-plugin-logseq": "^1.1.2"
+  },
+  "logseq": {
+    "id": "logseq-clean-sidebar",
+    "title": "Clean Sidebar",
+    "icon": "./icon.svg"
+  }
+}

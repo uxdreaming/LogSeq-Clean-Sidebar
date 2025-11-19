@@ -11,20 +11,20 @@
     "logseq",
     "plugin",
     "sidebar",
-    "ribbon",
     "clean",
+    "favorites",
     "ui"
   ],
   "author": "Aru",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/uxdreaming/logseq-clean-sidebar"
+    "url": "https://github.com/uxdreaming/LogSeq-Clean-Sidebar"
   },
   "bugs": {
-    "url": "https://github.com/uxdreaming/logseq-clean-sidebar/issues"
+    "url": "https://github.com/uxdreaming/LogSeq-Clean-Sidebar/issues"
   },
-  "homepage": "https://github.com/uxdreaming/logseq-clean-sidebar#readme",
+  "homepage": "https://github.com/uxdreaming/LogSeq-Clean-Sidebar#readme",
   "devDependencies": {
     "@logseq/libs": "^0.0.15",
     "typescript": "^5.0.0",

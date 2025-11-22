@@ -1,6 +1,6 @@
 {
   "name": "logseq-clean-sidebar",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Clean up Logseq sidebar by hiding unused elements, sorting favorites, and filtering recents",
   "main": "dist/index.js",
   "scripts": {

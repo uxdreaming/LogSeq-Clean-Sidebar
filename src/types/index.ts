@@ -28,10 +28,11 @@ export interface PluginSettings {
   hideCreate: boolean
   favoritesSortOrder: FavoritesSortOrder
   hideFavoritesFromRecents: boolean
+  hideCheckboxes: boolean
 }
 
 export interface SettingSchemaItem {
-  key: keyof PluginSettings | '_favoritesHeading' | '_recentsHeading'
+  key: keyof PluginSettings | '_favoritesHeading' | '_recentsHeading' | '_uiHeading'
   type: 'boolean' | 'heading' | 'enum'
   default?: boolean | string
   title: string

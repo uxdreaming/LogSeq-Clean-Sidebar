@@ -43,7 +43,8 @@ export function applyVisibilityClasses(settings: Partial<PluginSettings> | null)
     [CSS_CLASSES.hideFlashcards, effectiveSettings.hideFlashcards],
     [CSS_CLASSES.hideGraph, effectiveSettings.hideGraph],
     [CSS_CLASSES.hideAllPages, effectiveSettings.hideAllPages],
-    [CSS_CLASSES.hideCreate, effectiveSettings.hideCreate]
+    [CSS_CLASSES.hideCreate, effectiveSettings.hideCreate],
+    [CSS_CLASSES.hideCheckboxes, effectiveSettings.hideCheckboxes]
   ]
 
   classMapping.forEach(([className, shouldAdd]) => {

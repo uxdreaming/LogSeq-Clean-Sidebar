@@ -14,7 +14,8 @@ export const DEFAULT_SETTINGS: PluginSettings = {
   hideAllPages: false,
   hideCreate: false,
   favoritesSortOrder: 'manual',
-  hideFavoritesFromRecents: true
+  hideFavoritesFromRecents: true,
+  hideCheckboxes: true
 }
 
 export const SETTINGS_SCHEMA: SettingSchemaItem[] = [
@@ -87,6 +88,19 @@ export const SETTINGS_SCHEMA: SettingSchemaItem[] = [
     default: DEFAULT_SETTINGS.hideFavoritesFromRecents,
     title: 'Ocultar duplicados',
     description: 'No mostrar en Recientes las páginas que se encuentran en Favoritos'
+  },
+  {
+    key: '_uiHeading',
+    type: 'heading',
+    title: 'Interfaz',
+    description: ''
+  },
+  {
+    key: 'hideCheckboxes',
+    type: 'boolean',
+    default: DEFAULT_SETTINGS.hideCheckboxes,
+    title: 'Ocultar checkboxes y menús',
+    description: 'Oculta los checkboxes y los botones de menú (tres puntos) en Favoritos y Recientes'
   }
 ]
 
@@ -102,5 +116,6 @@ export const CSS_CLASSES = {
   hideGraph: `${PLUGIN_NAME}-hide-graph`,
   hideAllPages: `${PLUGIN_NAME}-hide-all-pages`,
   hideCreate: `${PLUGIN_NAME}-hide-create`,
+  hideCheckboxes: `${PLUGIN_NAME}-hide-checkboxes`,
   active: `${PLUGIN_NAME}-active`
 } as const

@@ -83,5 +83,45 @@ export function getSidebarStyles(): string {
     html body .left-sidebar-inner ul.favorites li.favorite-item.dragging {
       opacity: 0.5;
     }
+
+    /* =========================================
+       Hide Checkboxes and Menu Buttons in Sidebar
+       ========================================= */
+
+    /* Hide all checkboxes in Favorites and Recents sections */
+    html body.${CSS_CLASSES.hideCheckboxes} .left-sidebar-inner .nav-content-item input[type="checkbox"],
+    html body.${CSS_CLASSES.hideCheckboxes} .left-sidebar-inner .favorite-item input[type="checkbox"],
+    html body.${CSS_CLASSES.hideCheckboxes} .left-sidebar-inner .recent-item input[type="checkbox"],
+    html body.${CSS_CLASSES.hideCheckboxes} .left-sidebar-inner li input[type="checkbox"],
+    html body.${CSS_CLASSES.hideCheckboxes} .left-sidebar-inner .nav-content-item .form-checkbox,
+    html body.${CSS_CLASSES.hideCheckboxes} .left-sidebar-inner .favorite-item .form-checkbox,
+    html body.${CSS_CLASSES.hideCheckboxes} .left-sidebar-inner .recent-item .form-checkbox {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      width: 0 !important;
+      height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    /* Hide three-dots menu buttons */
+    html body.${CSS_CLASSES.hideCheckboxes} .left-sidebar-inner .nav-content-item button[aria-haspopup="menu"],
+    html body.${CSS_CLASSES.hideCheckboxes} .left-sidebar-inner .favorite-item button[aria-haspopup="menu"],
+    html body.${CSS_CLASSES.hideCheckboxes} .left-sidebar-inner .recent-item button[aria-haspopup="menu"],
+    html body.${CSS_CLASSES.hideCheckboxes} .left-sidebar-inner .nav-content-item .ls-icon-dots,
+    html body.${CSS_CLASSES.hideCheckboxes} .left-sidebar-inner .favorite-item .ls-icon-dots,
+    html body.${CSS_CLASSES.hideCheckboxes} .left-sidebar-inner .recent-item .ls-icon-dots {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+    }
+
+    /* Adjust spacing when checkboxes are hidden */
+    html body.${CSS_CLASSES.hideCheckboxes} .left-sidebar-inner .nav-content-item,
+    html body.${CSS_CLASSES.hideCheckboxes} .left-sidebar-inner .favorite-item,
+    html body.${CSS_CLASSES.hideCheckboxes} .left-sidebar-inner .recent-item {
+      padding-left: 8px !important;
+    }
   `
 }

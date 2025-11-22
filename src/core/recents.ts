@@ -5,8 +5,8 @@
 
 import { getMainDocument } from './dom'
 
-const FAVORITES_SELECTOR = 'ul.favorites li.favorite-item'
-const RECENTS_SELECTOR = '.nav-content-item.recent .recent-item'
+const FAVORITES_SELECTOR = '.favorite-item, ul.favorites li, .nav-content-item.favorite .nav-content-item'
+const RECENTS_SELECTOR = '.recent-item, .nav-content-item.recent .nav-content-item'
 
 /**
  * Gets all favorite page references
@@ -17,7 +17,17 @@ function getFavoriteRefs(): Set<string> {
   const refs = new Set<string>()
 
   favorites.forEach(item => {
-    const ref = item.getAttribute('data-ref')
+    // Try multiple attributes and text content
+    let ref = item.getAttribute('data-ref')
+
+    if (!ref) {
+      // Try to get from link text
+      const link = item.querySelector('a')
+      if (link) {
+        ref = link.textContent?.trim() || ''
+      }
+    }
+
     if (ref) {
       refs.add(ref.toLowerCase())
     }
@@ -38,13 +48,21 @@ export function hideFavoritesFromRecents(): void {
   }
 
   const recentItems = doc.querySelectorAll(RECENTS_SELECTOR)
-
   recentItems.forEach(item => {
-    const ref = item.getAttribute('data-ref')
+    let ref = item.getAttribute('data-ref')
+
+    if (!ref) {
+      // Try to get from link text
+      const link = item.querySelector('a')
+      if (link) {
+        ref = link.textContent?.trim() || ''
+      }
+    }
+
     if (ref && favoriteRefs.has(ref.toLowerCase())) {
-      (item as HTMLElement).style.display = 'none'
+      (item as HTMLElement).classList.add('clean-sidebar-hidden')
     } else {
-      (item as HTMLElement).style.display = ''
+      (item as HTMLElement).classList.remove('clean-sidebar-hidden')
     }
   })
 }

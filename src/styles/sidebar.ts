@@ -85,6 +85,16 @@ export function getSidebarStyles(): string {
     }
 
     /* =========================================
+       Hide Duplicate Favorites from Recents
+       ========================================= */
+
+    /* High specificity to override LogSeq styles without !important */
+    html body #app-container .left-sidebar-inner .nav-content-item.recent li.recent-item.clean-sidebar-hidden,
+    html body #app-container .left-sidebar-inner li.recent-item.clean-sidebar-hidden {
+      display: none;
+    }
+
+    /* =========================================
        Hide Checkboxes and Menu Buttons in Sidebar
        ========================================= */
 

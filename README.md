@@ -7,7 +7,7 @@ A Logseq plugin to clean up and customize your sidebar by hiding unused elements
 - **Hide sidebar elements** you don't use (Journals, Whiteboards, Flashcards, Graph, All Pages)
 - **Sort favorites** - Alphabetically or manually
 - **Hide favorites from recents** - Avoid duplicates in your recent pages list
-- **Hide checkboxes** - Clean up the sidebar by hiding those annoying checkboxes in Favorites and Recents
+- **Hide checkboxes and menus** - Clean up the sidebar by hiding checkboxes and menu buttons
 - **Easy configuration panel** with toggles
 
 ## Configurable Elements
@@ -18,13 +18,16 @@ A Logseq plugin to clean up and customize your sidebar by hiding unused elements
 - Flashcards
 - Graph View
 - All Pages
-- Favorites section
-- Recent pages section
+- Create Button
 
-### Additional Options
-- Sort favorites (alphabetically or manual order)
-- Hide favorite pages from recent list
-- Hide checkboxes in sidebar (Favorites and Recents sections)
+### Favorites
+- Sort order (Alphabetical or Manual)
+
+### Recent Pages
+- Hide duplicate pages (pages that are in Favorites)
+
+### Interface
+- Hide checkboxes and menu buttons (three dots)
 
 ## Installation
 
@@ -44,9 +47,10 @@ A Logseq plugin to clean up and customize your sidebar by hiding unused elements
 
 ## Usage
 
-1. Click on the plugin icon to open settings
+1. Click on the plugin settings (Settings → Plugins → Clean Sidebar)
 2. Toggle the elements you want to hide
 3. Configure sorting and filtering options as needed
+4. Changes apply instantly
 
 ## Development
 

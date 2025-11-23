@@ -23,84 +23,84 @@ export const SETTINGS_SCHEMA: SettingSchemaItem[] = [
     key: 'hideJournals',
     type: 'boolean',
     default: DEFAULT_SETTINGS.hideJournals,
-    title: 'Ocultar Diarios',
-    description: 'Oculta la sección de Diarios de la barra lateral'
+    title: 'Hide Journals',
+    description: 'Hide the Journals section from the sidebar'
   },
   {
     key: 'hideWhiteboards',
     type: 'boolean',
     default: DEFAULT_SETTINGS.hideWhiteboards,
-    title: 'Ocultar Pizarras',
-    description: 'Oculta la sección de Pizarras de la barra lateral'
+    title: 'Hide Whiteboards',
+    description: 'Hide the Whiteboards section from the sidebar'
   },
   {
     key: 'hideFlashcards',
     type: 'boolean',
     default: DEFAULT_SETTINGS.hideFlashcards,
-    title: 'Ocultar Tarjetas de memorización',
-    description: 'Oculta la sección de Tarjetas de memorización de la barra lateral'
+    title: 'Hide Flashcards',
+    description: 'Hide the Flashcards section from the sidebar'
   },
   {
     key: 'hideGraph',
     type: 'boolean',
     default: DEFAULT_SETTINGS.hideGraph,
-    title: 'Ocultar Vista de Grafo',
-    description: 'Oculta la sección de Vista de Grafo de la barra lateral'
+    title: 'Hide Graph View',
+    description: 'Hide the Graph View section from the sidebar'
   },
   {
     key: 'hideAllPages',
     type: 'boolean',
     default: DEFAULT_SETTINGS.hideAllPages,
-    title: 'Ocultar Lista de páginas',
-    description: 'Oculta la sección de Lista de páginas de la barra lateral'
+    title: 'Hide All Pages',
+    description: 'Hide the All Pages section from the sidebar'
   },
   {
     key: 'hideCreate',
     type: 'boolean',
     default: DEFAULT_SETTINGS.hideCreate,
-    title: 'Ocultar Crear',
-    description: 'Oculta el botón Crear de la barra lateral'
+    title: 'Hide Create Button',
+    description: 'Hide the Create button from the sidebar'
   },
   {
     key: '_favoritesHeading',
     type: 'heading',
-    title: 'Favoritos',
+    title: 'Favorites',
     description: ''
   },
   {
     key: 'favoritesSortOrder',
     type: 'enum',
     default: DEFAULT_SETTINGS.favoritesSortOrder,
-    title: 'Orden',
+    title: 'Sort Order',
     description: '',
-    enumChoices: ['Alfabético', 'Manual'],
+    enumChoices: ['Alphabetical', 'Manual'],
     enumPicker: 'radio'
   },
   {
     key: '_recentsHeading',
     type: 'heading',
-    title: 'Recientes',
+    title: 'Recent Pages',
     description: ''
   },
   {
     key: 'hideFavoritesFromRecents',
     type: 'boolean',
     default: DEFAULT_SETTINGS.hideFavoritesFromRecents,
-    title: 'Ocultar duplicados',
-    description: 'No mostrar en Recientes las páginas que se encuentran en Favoritos'
+    title: 'Hide duplicates',
+    description: 'Hide favorite pages from the Recent pages list to avoid duplicates'
   },
   {
     key: '_uiHeading',
     type: 'heading',
-    title: 'Interfaz',
+    title: 'Interface',
     description: ''
   },
   {
     key: 'hideCheckboxes',
     type: 'boolean',
     default: DEFAULT_SETTINGS.hideCheckboxes,
-    title: 'Ocultar checkboxes y menús',
-    description: 'Oculta los checkboxes y los botones de menú (tres puntos) en Favoritos y Recientes'
+    title: 'Hide checkboxes and menus',
+    description: 'Hide checkboxes and menu buttons (three dots) in Favorites and Recent pages'
   }
 ]
 

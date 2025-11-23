@@ -88,10 +88,17 @@ export function getSidebarStyles(): string {
        Hide Duplicate Favorites from Recents
        ========================================= */
 
-    /* High specificity to override LogSeq styles without !important */
-    html body #app-container .left-sidebar-inner .nav-content-item.recent li.recent-item.clean-sidebar-hidden,
-    html body #app-container .left-sidebar-inner li.recent-item.clean-sidebar-hidden {
-      display: none;
+    /* High specificity to override LogSeq styles */
+    html body .left-sidebar-inner li.recent-item.clean-sidebar-hidden,
+    html body .left-sidebar-inner li.recent-item.clean-sidebar-hidden.select-none,
+    html body .left-sidebar-inner .nav-content-item.recent li.recent-item.clean-sidebar-hidden,
+    li.recent-item.clean-sidebar-hidden {
+      display: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      overflow: hidden !important;
+      margin: 0 !important;
+      padding: 0 !important;
     }
 
     /* =========================================

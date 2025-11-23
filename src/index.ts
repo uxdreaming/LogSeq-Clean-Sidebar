@@ -45,7 +45,7 @@ function applySettings(): void {
 
     // Apply favorites sorting
     const sortOrder = settings?.favoritesSortOrder ?? DEFAULT_SETTINGS.favoritesSortOrder
-    const shouldSort = sortOrder === 'Alfabético'
+    const shouldSort = sortOrder === 'Alphabetical'
 
     // Clean up previous observers
     if (favoritesObserver) {
@@ -85,8 +85,13 @@ async function main(): Promise<void> {
   registerSettings()
   injectStyles()
 
-  // Apply initial settings after DOM is ready
-  setTimeout(applySettings, 500)
+  // Apply settings when UI is ready
+  logseq.App.onRouteChanged(() => {
+    applySettings()
+  })
+
+  // Apply initial settings
+  applySettings()
 
   // React to settings changes
   logseq.onSettingsChanged(applySettings)

@@ -13,20 +13,13 @@ const RECENTS_SELECTOR = '.recent-item, .nav-content-item.recent .nav-content-it
  */
 function getFavoriteRefs(): Set<string> {
   const doc = getMainDocument()
-  const favorites = doc.querySelectorAll(FAVORITES_SELECTOR)
+
+  // Use more specific selector for favorite items
+  const favorites = doc.querySelectorAll('ul.favorites li.favorite-item')
   const refs = new Set<string>()
 
   favorites.forEach(item => {
-    // Try multiple attributes and text content
-    let ref = item.getAttribute('data-ref')
-
-    if (!ref) {
-      // Try to get from link text
-      const link = item.querySelector('a')
-      if (link) {
-        ref = link.textContent?.trim() || ''
-      }
-    }
+    const ref = item.getAttribute('data-ref')
 
     if (ref) {
       refs.add(ref.toLowerCase())
@@ -47,22 +40,21 @@ export function hideFavoritesFromRecents(): void {
     return
   }
 
-  const recentItems = doc.querySelectorAll(RECENTS_SELECTOR)
+  // Use more specific selector for recent items
+  const recentItems = doc.querySelectorAll('li.recent-item')
+
   recentItems.forEach(item => {
-    let ref = item.getAttribute('data-ref')
+    const ref = item.getAttribute('data-ref')
 
-    if (!ref) {
-      // Try to get from link text
-      const link = item.querySelector('a')
-      if (link) {
-        ref = link.textContent?.trim() || ''
+    if (ref) {
+      const refLower = ref.toLowerCase()
+
+      if (favoriteRefs.has(refLower)) {
+        // Use CSS class instead of inline style for better persistence
+        ;(item as HTMLElement).classList.add('clean-sidebar-hidden')
+      } else {
+        (item as HTMLElement).classList.remove('clean-sidebar-hidden')
       }
-    }
-
-    if (ref && favoriteRefs.has(ref.toLowerCase())) {
-      (item as HTMLElement).classList.add('clean-sidebar-hidden')
-    } else {
-      (item as HTMLElement).classList.remove('clean-sidebar-hidden')
     }
   })
 }
@@ -75,7 +67,7 @@ export function showAllRecents(): void {
   const recentItems = doc.querySelectorAll(RECENTS_SELECTOR)
 
   recentItems.forEach(item => {
-    (item as HTMLElement).style.display = ''
+    (item as HTMLElement).classList.remove('clean-sidebar-hidden')
   })
 }
 
@@ -88,17 +80,22 @@ export function observeRecents(shouldHide: boolean): MutationObserver | null {
   }
 
   const doc = getMainDocument()
-  const recentsContainer = doc.querySelector('.nav-content-item.recent')
+  const sidebar = doc.querySelector('.left-sidebar-inner')
 
-  if (!recentsContainer) {
+  if (!sidebar) {
+    // Retry after delay if sidebar not ready
+    setTimeout(() => observeRecents(shouldHide), 500)
     return null
   }
 
+  // Apply immediately
+  hideFavoritesFromRecents()
+
   const observer = new MutationObserver(() => {
-    setTimeout(() => hideFavoritesFromRecents(), 100)
+    hideFavoritesFromRecents()
   })
 
-  observer.observe(recentsContainer, {
+  observer.observe(sidebar, {
     childList: true,
     subtree: true
   })

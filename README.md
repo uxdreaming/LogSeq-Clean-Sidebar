@@ -24,7 +24,7 @@ A Logseq plugin to clean up and customize your sidebar by hiding unused elements
 - Sort order (Alphabetical or Manual)
 
 ### Recent Pages
-- Hide duplicate pages (pages that are in Favorites)
+- Hide duplicates (exclude favorites from recents)
 
 ### Interface
 - Hide checkboxes and menu buttons (three dots)

@@ -72,7 +72,3 @@ Issues and pull requests are welcome! Please feel free to contribute.
 ## License
 
 [MIT](./LICENSE)
-
-## Author
-
-**Aru** - [@uxdreaming](https://github.com/uxdreaming)

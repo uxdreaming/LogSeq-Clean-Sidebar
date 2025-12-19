@@ -1,74 +1,39 @@
 # Logseq Clean Sidebar
 
-A Logseq plugin to clean up and customize your sidebar by hiding unused elements.
+A minimal Logseq plugin that hides unused sidebar elements for a cleaner workspace.
 
 ## Features
 
-- **Hide sidebar elements** you don't use (Journals, Whiteboards, Flashcards, Graph, All Pages)
-- **Sort favorites** - Alphabetically or manually
-- **Hide favorites from recents** - Avoid duplicates in your recent pages list
-- **Hide checkboxes and menus** - Clean up the sidebar by hiding checkboxes and menu buttons
-- **Easy configuration panel** with toggles
-
-## Configurable Elements
-
-### Hide/Show
-- Journals
-- Whiteboards
-- Flashcards
-- Graph View
-- All Pages
-- Create Button
-
-### Favorites
-- Sort order (Alphabetical or Manual)
-
-### Recent Pages
-- Hide duplicates (exclude favorites from recents)
-
-### Interface
-- Hide checkboxes and menu buttons (three dots)
+- **Hide elements**: Journals, Whiteboards, Flashcards, Graph, All Pages, Create button
+- **Sort favorites**: Alphabetically or manually
+- **Filter recents**: Exclude favorites from recent pages
+- **Clean UI**: Hide checkboxes and menu buttons
 
 ## Installation
 
-### From Marketplace (Recommended)
+### Marketplace (Recommended)
 
-1. Open Logseq
-2. Go to **Settings → Plugins → Marketplace**
-3. Search for "Clean Sidebar"
-4. Click **Install**
+1. Open Logseq → **Settings → Plugins → Marketplace**
+2. Search "Clean Sidebar"
+3. Click **Install**
 
-### Manual Installation
+### Manual
 
-1. Download the latest release from [GitHub Releases](https://github.com/uxdreaming/logseq-clean-sidebar/releases)
-2. Extract the zip file
-3. In Logseq, go to **Settings → Plugins → Load unpacked plugin**
-4. Select the extracted folder
+1. Download from [Releases](https://github.com/uxdreaming/LogSeq-Clean-Sidebar/releases)
+2. Extract and load via **Settings → Plugins → Load unpacked plugin**
 
 ## Usage
 
-1. Click on the plugin settings (Settings → Plugins → Clean Sidebar)
-2. Toggle the elements you want to hide
-3. Configure sorting and filtering options as needed
-4. Changes apply instantly
+Go to **Settings → Plugins → Clean Sidebar** and toggle the options you want.
 
 ## Development
 
 ```bash
-# Install dependencies
 npm install
-
-# Build for development (watch mode)
-npm run dev
-
-# Build for production
-npm run build
+npm run dev    # Watch mode
+npm run build  # Production
 ```
-
-## Contributing
-
-Issues and pull requests are welcome! Please feel free to contribute.
 
 ## License
 
-[MIT](./LICENSE)
+MIT
